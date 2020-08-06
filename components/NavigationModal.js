@@ -1,24 +1,17 @@
-// import React, { Fragment } from 'react';
-// import Link from 'next/link';
-// import setCurrentlyActiveIcon from '../../events/setCurrentlyActiveIcon';
-// import redirect from '../../helpers/redirect';
-// import ResponsiveNavigation from './imports/ResponsiveNavigation';
-// import NavigationModal from './imports/NavigationModal';
-import styles from '../styles/Navigation.module.scss';
 import setCurrentlyActiveIcon from '../helpers/setCurrentlyActiveIcon';
+import styles from '../styles/Navigation.module.scss';
 
-export default function Navigation() {
+function closeModal() {
+  document
+    .getElementById('navigation_modal')
+    .classList.remove('navigation_modal--open');
+}
+
+export default function NavigationModal() {
   return (
-    // <Fragment>
-    <nav className={styles.navigation}>
-      {/* Logo */}
-      <div className={styles.navigation_logo}>
-        <p className={styles.temp_logo}>
-          d<span>o</span>
-        </p>
-      </div>
-      {/* Navigation Icons */}
-      <ul className={styles.navigation_icons}>
+    <div id="navigation_modal" className={styles.navigation_modal}>
+      <i className="fas fa-times" id="close_modal" onClick={closeModal}></i>
+      <ul className="navigation_icons">
         {/* <Link to="/"> */}
         <li
           id="/"
@@ -54,8 +47,8 @@ export default function Navigation() {
         >
           <i className="fas fa-laptop-code"></i>
         </li>
-        {/* </Link> */}
-        {/* <Link to="/contact"> */}
+        {/* </Link>
+        <Link to="/contact"> */}
         <li
           id="/contact"
           className={
@@ -67,9 +60,8 @@ export default function Navigation() {
           <i className="fas fa-envelope"></i>
         </li>
         {/* </Link> */}
-      </ul>
-      {/* Social Media Icons */}
-      <ul className={styles.navigation_icons}>
+        <hr />
+
         <li
           className={
             (styles.navigation_icons_icon,
@@ -87,14 +79,11 @@ export default function Navigation() {
             styles['navigation_icons_icon--linkedin'])
           }
           // onClick={redirect}
-          data-link="https://linkedin.com/in/denis-onder"
+          data-link="https://linkedin.com/in/dennis-onder"
         >
           <i className="fab fa-linkedin"></i>
         </li>
       </ul>
-    </nav>
-    //   <ResponsiveNavigation />
-    //   <NavigationModal />
-    // </Fragment>
+    </div>
   );
 }

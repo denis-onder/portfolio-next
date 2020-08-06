@@ -1,6 +1,6 @@
-@import "./imports/_vars";
+@import './imports/_vars';
 
-#animation_loader {
+.animation_loader {
   transition: $transition;
   transform: translateX(100%);
   background-color: $light_background;
