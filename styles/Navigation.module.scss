@@ -1,7 +1,7 @@
-@import "./imports/_vars";
+@import './imports/_vars';
 
-#navigation,
-#navigation_responsive {
+.navigation,
+.navigation_responsive {
   z-index: 3;
   position: fixed;
   left: 0;
@@ -14,7 +14,7 @@
   box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
 }
 
-#navigation_responsive {
+.navigation_responsive {
   display: none;
   flex-direction: row;
   align-items: center;
@@ -22,7 +22,7 @@
   width: 100vw;
 }
 
-#navigation {
+.navigation {
   flex-direction: column;
   height: 100vh;
   width: $navbar_width;
@@ -44,7 +44,7 @@
   height: 100vh;
   top: 0;
   background-color: $dark_red;
-  #close_modal {
+  .close_modal {
     position: absolute;
     top: 15px;
     right: 20px;
@@ -128,10 +128,10 @@
   .navigation_modal {
     display: flex;
   }
-  #navigation {
+  .navigation {
     display: none;
   }
-  #navigation_responsive {
+  .navigation_responsive {
     display: flex;
     .temp_logo {
       float: left;

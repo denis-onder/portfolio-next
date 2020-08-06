@@ -57,11 +57,13 @@ export default function Home() {
       <h1 className={styles.home_name}>
         denis <span>onder</span>
       </h1>
-      <div className="home_text">
+      <div className={styles.home_text}>
         <p>I am a full-stack web developer from Bosnia and Herzegovina.</p>
         <p>Currently working within the MERN stack.</p>
       </div>
-      <Link href="/contact">contact me</Link>
+      <Link href="/contact" passHref>
+        <a className={styles.home_link}>contact me</a>
+      </Link>
     </div>
   );
 }
