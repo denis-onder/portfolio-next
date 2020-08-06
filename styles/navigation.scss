@@ -1,0 +1,145 @@
+@import "./imports/_vars";
+
+#navigation,
+#navigation_responsive {
+  z-index: 3;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: lighten($navbar_background, 1%);
+  display: flex;
+  justify-content: space-between;
+  -webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+}
+
+#navigation_responsive {
+  display: none;
+  flex-direction: row;
+  align-items: center;
+  height: $navbar_width;
+  width: 100vw;
+}
+
+#navigation {
+  flex-direction: column;
+  height: 100vh;
+  width: $navbar_width;
+}
+
+.navigation_modal {
+  &,
+  * {
+    transition: $transition;
+  }
+  z-index: 4;
+  display: none;
+  opacity: 0;
+  transform: translateX(110%);
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  background-color: $dark_red;
+  #close_modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: $background;
+    font-size: 32px;
+    cursor: pointer;
+  }
+  ul {
+    li {
+      color: $background;
+      &:hover {
+        i {
+          color: $background;
+        }
+      }
+    }
+  }
+  &--open {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  hr {
+    width: 70%;
+    border-color: $background;
+  }
+}
+
+.navigation_logo {
+  width: 100%;
+  font-size: 32px;
+  text-align: center;
+  font-weight: bold;
+  color: white;
+  p {
+    margin: 10px 0;
+    span {
+      color: $red;
+    }
+  }
+}
+.navigation_icons {
+  padding: 0;
+  width: 100%;
+  list-style-type: none;
+  text-align: center;
+  &,
+  a {
+    color: $gray;
+  }
+  .navigation_icons_icon {
+    cursor: pointer;
+    transition: $transition;
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
+    &--github:hover,
+    &--github:focus {
+      color: #00bcd5;
+    }
+    &--linkedin:hover,
+    &--linkedin:focus {
+      color: #0073b0;
+    }
+  }
+  i {
+    font-size: 28px;
+    margin: 10px 0;
+  }
+}
+
+.active {
+  color: $red;
+  &:hover,
+  &:focus {
+    color: $red !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigation_modal {
+    display: flex;
+  }
+  #navigation {
+    display: none;
+  }
+  #navigation_responsive {
+    display: flex;
+    .temp_logo {
+      float: left;
+      margin-left: 20px;
+    }
+    .navigation_icons_icon {
+      float: right;
+      margin-right: 20px;
+    }
+  }
+}

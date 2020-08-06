@@ -1,0 +1,26 @@
+@import "./imports/_vars";
+
+#portfolio {
+  overflow: auto;
+  min-height: 100vh;
+  margin-left: $navbar_width;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+@media (max-width: 1024px) {
+  #portfolio {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #portfolio {
+    margin-left: 0;
+    margin-top: $navbar_width;
+  }
+}

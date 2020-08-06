@@ -1,0 +1,116 @@
+@import "./imports/_vars";
+
+#contact {
+  width: 100%;
+  height: 100vh;
+  .contact_form {
+    height: 100%;
+    &,
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    form {
+      width: 40%;
+      * {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border: 0;
+      }
+      input,
+      textarea,
+      button {
+        transition: $transition;
+        font-size: 16px;
+        margin: 5px 0;
+        padding: 8px 16px;
+        &:focus {
+          outline: none;
+        }
+      }
+      textarea {
+        resize: none;
+      }
+      input,
+      textarea {
+        background-color: lighten($gray, 15%);
+        font-weight: bold;
+        color: $background;
+        -webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+        &::placeholder {
+          transition: all ease-in-out 0.1s;
+          color: $background;
+        }
+        &:focus {
+          color: #333;
+          background-color: #fff;
+          &::placeholder {
+            color: transparent;
+          }
+        }
+      }
+      button {
+        width: 50%;
+        background: transparent;
+        color: white;
+        border: 1px solid $red;
+        cursor: pointer;
+        font-weight: bold;
+        &:hover,
+        &:focus {
+          background-color: $red;
+          color: $background;
+          -webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+          -moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+        }
+      }
+    }
+  }
+  #form_output {
+    &:not(:empty) {
+      transform: translateY(0);
+    }
+    transform: translateY(100%);
+    transition: $transition;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+    width: 50%;
+    background-color: $dark_red;
+    padding: 1em 0;
+    text-align: center;
+    p {
+      margin: 8px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #contact {
+    .contact_form {
+      form {
+        width: 80%;
+      }
+    }
+  }
+  #form_output {
+    width: 100% !important;
+    left: 0 !important;
+    padding: 0;
+  }
+}
+
+@media (max-width: 476px) {
+  #contact {
+    margin-top: 16px;
+    h1 {
+      display: none;
+    }
+  }
+}

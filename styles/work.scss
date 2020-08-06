@@ -1,0 +1,64 @@
+@import "./imports/_vars";
+
+.work {
+  background-size: cover !important;
+  * {
+    transition: $transition;
+  }
+  .work_overlay {
+    height: 0;
+    width: 100%;
+    transition: $transition;
+    background-color: rgba(213, 56, 14, 0.85);
+    display: flex;
+    flex-direction: column;
+    .work_links {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      .work_link {
+        margin: 10px 0;
+        padding: 0.25em 0.5em;
+        text-decoration: none;
+        background-color: $background;
+        color: #fff;
+        -webkit-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+        &:hover {
+          color: lighten($red, 10%);
+        }
+      }
+    }
+    &_wrapper {
+      opacity: 0;
+      margin-top: 10px;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+  }
+  &:hover,
+  &:focus {
+    .work_overlay {
+      height: 100%;
+      &_wrapper {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .work_text {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  .work_overlay_wrapper {
+    margin-top: 0 !important;
+    margin-left: 10px !important;
+  }
+  .work_link {
+    margin: 5px 0 !important;
+    padding: 0.2em 0.4em;
+  }
+}

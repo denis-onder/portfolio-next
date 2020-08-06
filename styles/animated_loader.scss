@@ -1,0 +1,52 @@
+@import "./imports/_vars";
+
+#animation_loader {
+  transition: $transition;
+  transform: translateX(100%);
+  background-color: $light_background;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  p {
+    font-size: 72px;
+    font-weight: bold;
+    color: #fff;
+    span {
+      color: $red;
+    }
+  }
+  .outer_bar {
+    width: 50%;
+    height: 10px;
+    background-color: $gray;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    .inner_bar {
+      width: 0;
+      height: 10px;
+      background-color: $red;
+    }
+  }
+}
+
+@keyframes animate {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.show {
+  animation: animate 1.5s;
+  animation-fill-mode: forwards;
+}
